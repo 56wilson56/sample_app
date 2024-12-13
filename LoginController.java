@@ -4,7 +4,6 @@ import java.sql.*;
 @RestController
 public class LoginController {
 
-    // Security Bug: SQL Injection vulnerability due to unsanitized user input in query.
     @PostMapping("/login")
     public String login(@RequestBody User user) {
         String username = user.getUsername();
