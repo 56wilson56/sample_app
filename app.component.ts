@@ -16,7 +16,6 @@ export class AppComponent {
   constructor(private http: HttpClient) {}
 
   login() {
-    // Security Bug: Sends sensitive data (username/password) in plain text without encryption.
     this.http.post('http://localhost:8080/login', { username: this.username, password: this.password })
       .subscribe(response => console.log('Logged in'));
   }
